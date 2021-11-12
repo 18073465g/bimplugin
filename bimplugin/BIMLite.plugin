@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<PluginFile Name="BIM"
+            Author="ZHANG Min"
+			      Version="1.0"
+            Modules="*"
+            Type="Lite"
+            Description="Lidar Plugin.">
+  <Manifest>
+    <!--the depency node. for example:
+    <Dependency PluginFile="IASystem.GP" Version="1.0" requirePreload="true"/>-->
+  </Manifest>
+  <Runtime Assembly="IA.bimPlugin.dll"/>
+  <Resources>
+    <String Language="zh_cn" File="Language/zh_cn/ia.bimplugin_zh.qm"></String>
+    <String Language="en"  File="Language/en/ia.bimplugin_en.qm"></String>
+    <Icon File="resource/bimplugin.res"></Icon>
+  </Resources>
+  <!--Initialize some plugin node Path-->
+  
+  <Extension Path="/System/MainWindow/ToolBoxView">
+    <CategoryItem Name="BIM" Type="Category" Text="BIM">
+        <CategoryItem Name="GenBIM" Type="Command" Text="Generate BIM" Class="GenBIMCommand"/>
+    </CategoryItem>
+  </Extension>
+</PluginFile>
